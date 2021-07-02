@@ -5,7 +5,7 @@
 <body>
     <div class="">
         <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">DFU</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -26,59 +26,62 @@
         </nav>
         <section class="py-2 text-center container">
             <!-- Intro section -->
-            <div class="row py-lg-2">
-                <div class="col-lg-8 col-md-8 mx-auto">
-                    <h1 class="fw-light">Welcome to DFU Classification Tool</h1>
-                    <p class="lead text-muted">
-                        Here you can upload an image containing a DFU or a normal skin image to get the probability of
-                        the
-                        skin having a DFU.
-                    </p>
-                    <p class="text-muted">
-                        Two models are provided to get the probability.
-                    </p>
+            <form action="http://localhost:5000/" method="POST" enctype="multipart/form-data">
+                <div class="row py-lg-2">
+                    <div class="col-lg-8 col-md-8 mx-auto">
+                        <h1 class="fw-light">Welcome to DFU Classification Tool</h1>
+                        <p class="lead text-muted">
+                            Here you can upload an image containing a DFU or a normal skin image to get the probability
+                            of
+                            the
+                            skin having a DFU.
+                        </p>
+                        <p class="text-muted">
+                            Two models are provided to get the probability.
+                        </p>
 
-                    <hr>
+                        <hr>
 
-                    <!-- Upload image -->
-                    <div class="container" style="margin-top: 30px; margin-bottom: 30px;">
-                        <label for="formFile" class="form-label">Upload the image here</label>
-                        <input class="form-control" type="file" id="formFile" accept=".png, .jpg, .jpeg">
+                        <!-- Upload image -->
+                        <div class="container" style="margin-top: 30px; margin-bottom: 30px;">
+                            <label for="formFile" class="form-label">Upload the image here</label>
+                            <input class="form-control" type="file" name="file" accept=".png, .jpg, .jpeg">
+                        </div>
+
+                        <hr>
+
+                        <ul class="list-group">
+                            <!-- Pre-Augmentation Model section -->
+                            <li class="list-group-item">
+                                <div>
+                                    <h5>Pre-Augmentation Model</h5>
+                                    <br>
+                                    <button type="button" class="btn btn-primary">Calculate</button>
+                                </div>
+
+                                <div class="container" style="margin-top: 10px;">
+                                    <span class="badge bg-success">Probability value of the image:</span>
+                                    <span class="badge bg-info">0 %</span>
+                                </div>
+                            </li>
+
+                            <!-- Post-Augmentation Model section -->
+                            <li class="list-group-item">
+                                <div>
+                                    <h5>Post-Augmentation Model</h5>
+                                    <br>
+                                    <button type="submit" class="btn btn-primary">Calculate</button>
+                                </div>
+
+                                <div class="container" style="margin-top: 10px;">
+                                    <span class="badge bg-success">Probability value of the image:</span>
+                                    <span class="badge bg-info">0 %</span>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-
-                    <hr>
-
-                    <ul class="list-group">
-                        <!-- Pre-Augmentation Model section -->
-                        <li class="list-group-item">
-                            <div>
-                                <h5>Pre-Augmentation Model</h5>
-                                <br>
-                                <button type="button" class="btn btn-primary">Calculate</button>
-                            </div>
-
-                            <div class="container" style="margin-top: 10px;">
-                                <span class="badge bg-success">Probability value of the image:</span>
-                                <span class="badge bg-info">0 %</span>
-                            </div>
-                        </li>
-
-                        <!-- Post-Augmentation Model section -->
-                        <li class="list-group-item">
-                            <div>
-                                <h5>Post-Augmentation Model</h5>
-                                <br>
-                                <button type="button" class="btn btn-primary">Calculate</button>
-                            </div>
-
-                            <div class="container" style="margin-top: 10px;">
-                                <span class="badge bg-success">Probability value of the image:</span>
-                                <span class="badge bg-info">0 %</span>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
-            </div>
+            </form>
         </section>
     </div>
 </body>
