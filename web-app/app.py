@@ -47,8 +47,9 @@ def index():
         file_path = os.path.join(basepath, 'static/img/uploads', secure_filename(f.filename))
         f.save(file_path)
 
-        result = model_predict(file_path, model)
-        return render_template('home.html', result = result)
+        preAugResult = "1"
+        postAugResult = "2"
+        return render_template('home.html', preAugResult = preAugResult, postAugResult = postAugResult)
 
 # ::: Run main :::
 if __name__ == "__main__":
