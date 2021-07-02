@@ -48,34 +48,32 @@
                             <input class="form-control" type="file" name="file" accept=".png, .jpg, .jpeg">
                         </div>
 
-                        <hr>
+                        <input type="submit" class="btn btn-primary" name="action" value="Calculate">
 
-                        <ul class="list-group">
+                        <ul class="list-group" style="margin-top: 30px; margin-bottom: 30px;">
                             <!-- Pre-Augmentation Model section -->
                             <li class="list-group-item">
-                                <div>
-                                    <h5>Pre-Augmentation Model</h5>
-                                    <br>
-                                    <button type="button" class="btn btn-primary">Calculate</button>
-                                </div>
-
-                                <div class="container" style="margin-top: 10px;">
-                                    <span class="badge bg-success">Probability value of the image:</span>
-                                    <span class="badge bg-info">0 %</span>
+                                <div class="container" style="margin-top: 10px; margin-bottom: 10px;">
+                                    <span>
+                                        <h5>Pre-Augmentation Model</h5>
+                                    </span>
+                                    <span class="badge bg-success" style="margin-right: 20px;">Probability value of the
+                                        image as a normal skin
+                                        image:</span>
+                                    <span class="badge bg-info">{{ preAugResult }} %</span>
                                 </div>
                             </li>
 
                             <!-- Post-Augmentation Model section -->
                             <li class="list-group-item">
-                                <div>
-                                    <h5>Post-Augmentation Model</h5>
-                                    <br>
-                                    <button type="submit" class="btn btn-primary">Calculate</button>
-                                </div>
-
-                                <div class="container" style="margin-top: 10px;">
-                                    <span class="badge bg-success">Probability value of the image:</span>
-                                    <span class="badge bg-info">0 %</span>
+                                <div class="container" style="margin-top: 10px; margin-bottom: 10px;">
+                                    <span>
+                                        <h5>Post-Augmentation Model</h5>
+                                    </span>
+                                    <span class="badge bg-success" style="margin-right: 20px;">Probability value of the
+                                        image as a normal skin
+                                        image:</span>
+                                    <span class="badge bg-info">{{ postAugResult }} %</span>
                                 </div>
                             </li>
                         </ul>
