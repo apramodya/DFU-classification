@@ -29,9 +29,13 @@ model = model_from_json(loaded_model_json)
 model.load_weights(POST_AUG_MODEL_WEIGHTS)
 
 # ::: Model prediction :::
-def model_predict(img_path, model):
-    img_normal = image.load_img(img_path, target_size=(128, 128))
-    img_normal = image.img_to_array(img_normal)/255
+def model_predict(filename, model):
+    basepath = os.path.dirname(__file__)
+    directory_path = os.path.join(basepath, 'static/img/uploads')
+    file_path = os.path.join(directory_path, filename)
+
+    img_normal = image.load_img(file_path, target_size=(128, 128))
+    img_normal_ = image.img_to_array(img_normal)/255
     img_normal = np.array([img_normal])
     pred = model.predict(img_normal)
 
@@ -46,6 +50,8 @@ def index():
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(basepath, 'static/img/uploads', secure_filename(f.filename))
         f.save(file_path)
+
+        result = model_predict(f.filename, model)
 
         preAugResult = "1"
         postAugResult = "2"
