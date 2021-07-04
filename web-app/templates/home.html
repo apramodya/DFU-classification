@@ -5,7 +5,7 @@
 <body>
     <div class="">
         <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">DFU</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -57,10 +57,14 @@
                                     <span>
                                         <h5>Pre-Augmentation Model</h5>
                                     </span>
-                                    <span class="badge bg-success" style="margin-right: 20px;">Probability value of the
-                                        image as a normal skin
-                                        image:</span>
+                                    <span style="margin-right: 20px;">Probability value of the
+                                        image as a </span>
+                                        <br>
+                                    <span class="badge bg-info" >normal skin image:</span>
                                     <span class="badge bg-info">{{ preAugResult }} %</span>
+                                    <br>
+                                    <span class="badge bg-warning" >abnormal skin image:</span>
+                                    <span class="badge bg-warning">{{ _preAugResult }} %</span>
                                 </div>
                             </li>
 
@@ -70,10 +74,14 @@
                                     <span>
                                         <h5>Post-Augmentation Model</h5>
                                     </span>
-                                    <span class="badge bg-success" style="margin-right: 20px;">Probability value of the
-                                        image as a normal skin
-                                        image:</span>
-                                    <span class="badge bg-info">{{ postAugResult }} %</span>
+                                    <span style="margin-right: 20px;">Probability value of the
+                                        image as a </span>
+                                        <br>
+                                    <span class="badge bg-danger" >normal skin image:</span>
+                                    <span class="badge bg-danger">{{ postAugResult }} %</span>
+                                    <br>
+                                    <span class="badge bg-success" >abnormal skin image:</span>
+                                    <span class="badge bg-success">{{ _postAugResult }} %</span>
                                 </div>
                             </li>
                         </ul>

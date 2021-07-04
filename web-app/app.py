@@ -56,10 +56,12 @@ def index():
 
         result = model_predict(f.filename, pre_aug_model, post_aug_model)
         
-        preAugResult =  "{:.3f}".format(result[0] * 100)
-        postAugResult = "{:.3f}".format(result[1] * 100)
+        preAugResult =  "{:.2f}".format(result[0] * 100)
+        _preAugResult =  "{:.2f}".format((1 - result[0]) * 100)
+        postAugResult = "{:.2f}".format(result[1] * 100)
+        _postAugResult = "{:.2f}".format((1 - result[1]) * 100)
 
-        return render_template('home.html', preAugResult = preAugResult, postAugResult = postAugResult)
+        return render_template('home.html', preAugResult = preAugResult, _preAugResult = _preAugResult, postAugResult = postAugResult, _postAugResult = _postAugResult)
 
 # ::: Run main :::
 if __name__ == "__main__":
