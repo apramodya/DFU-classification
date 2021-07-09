@@ -9,8 +9,8 @@ import cv2
 app = Flask(__name__)
 
 # ::: Prepare pre-aug model :::
-PRE_AUG_MODEL_WEIGHTS = './models/pre-aug/classifier.h5' 
-PRE_AUG_MODEL_ARCHITECTURE = './models/pre-aug/model.json'
+PRE_AUG_MODEL_WEIGHTS = './_models/pre-aug/classifier.h5' 
+PRE_AUG_MODEL_ARCHITECTURE = './_models/pre-aug/model.json'
 
 json_file = open(PRE_AUG_MODEL_ARCHITECTURE)
 loaded_model_json = json_file.read()
@@ -19,8 +19,8 @@ pre_aug_model = model_from_json(loaded_model_json)
 pre_aug_model.load_weights(PRE_AUG_MODEL_WEIGHTS)
 
 # ::: Prepare post-aug model :::
-POST_AUG_MODEL_WEIGHTS = './models/post-aug/classifier.h5' 
-POST_AUG_MODEL_ARCHITECTURE = './models/post-aug/model.json'
+POST_AUG_MODEL_WEIGHTS = './_models/post-aug/classifier.h5' 
+POST_AUG_MODEL_ARCHITECTURE = './_models/post-aug/model.json'
 
 json_file = open(POST_AUG_MODEL_ARCHITECTURE)
 loaded_model_json = json_file.read()
