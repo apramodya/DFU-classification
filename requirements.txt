@@ -3,3 +3,5 @@ tensorflow-cpu
 opencv-python
 flask
 gunicorn
+jinja2
+werkzeug
