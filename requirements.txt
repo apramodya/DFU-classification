@@ -8,4 +8,4 @@ Werkzeug==0.16.0
 
 numpy
 tensorflow-cpu
-opencv-python
+opencv-python-headless
