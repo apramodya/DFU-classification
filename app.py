@@ -51,8 +51,8 @@ def index():
     if request.method == 'POST':
         f = request.files['file']
 
-        # if f.filename == '':
-        #     return render_template('home.html')
+        if f.filename == '':
+            return render_template('home.html')
 
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(basepath, 'static/img/uploads', secure_filename(f.filename))
