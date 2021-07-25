@@ -1,0 +1,5 @@
+numpy
+tensorflow
+cv2
+flask
+gunicorn
